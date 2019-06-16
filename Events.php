@@ -11,7 +11,7 @@ use humhub\models\Setting;
 class Events extends BaseObject
 {
 
-    public static function onAdminMenuInit(\yii\base\Event $event)
+    public static function onAdminMenuInit($event)
     {
         $event->sender->addItem([
             'label' => Yii::t('AdsenseModule.base', 'AdSense Settings'),
