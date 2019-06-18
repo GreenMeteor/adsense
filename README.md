@@ -1,4 +1,5 @@
 # [HumHub](https://github.com/humhub/humhub) Adsense
+[![CLA assistant](https://cla-assistant.io/readme/badge/GreenMeteor/humhub-adsense-module)](https://cla-assistant.io/GreenMeteor/humhub-adsense-module)
 
 This module is for HumHub Version 1.3.x (Yii 2) and greater and cannot be used with HumHub Version 0.1x (Yii 1.1)
 
