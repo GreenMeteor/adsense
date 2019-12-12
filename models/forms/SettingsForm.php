@@ -1,6 +1,6 @@
 <?php
 
-namespace humhub\modules\adsense\forms;
+namespace humhub\modules\adsense\models\forms;
 
 use Yii;
 
@@ -11,8 +11,6 @@ class SettingsForm extends \yii\base\Model
 
     public $slot;
 
-    public $sort;
-
     public function rules()
     {
         return [
@@ -20,7 +18,6 @@ class SettingsForm extends \yii\base\Model
             [['client', 'slot','sort'], 'required'],
             [['client'], 'string', 'max' => 255],
             [['slot'], 'string', 'max' => 255],
-            [['sort'], 'integer', 'min' => 0, 'max' => '2000']
         ];
     }
 
@@ -29,7 +26,6 @@ class SettingsForm extends \yii\base\Model
         return [
             'client' => Yii::t('AdsenseModule.base', 'client'),
             'slot' => Yii::t('AdsenseModule.base', 'slot'),
-            'sort' => Yii::t('AdsenseModule.base', 'sort')
         ];
     }
 }
