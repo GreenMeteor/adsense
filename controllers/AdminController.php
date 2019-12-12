@@ -3,11 +3,11 @@
 namespace humhub\modules\adsense\controllers;
 
 use Yii;
-use humhub\models\Setting;
 use yii\helpers\Url;
-use humhub\modules\admin\components\Controller;
+use humhub\models\Setting;
 use humhub\components\behaviors\AccessControl;
 use humhub\modules\adsense\forms\SettingsForm;
+use humhub\modules\admin\components\Controller;
 
 class AdminController extends Controller
 {
@@ -29,7 +29,6 @@ class AdminController extends Controller
             if ($form->validate()) {
                 Setting::Set('client', $form->client, 'adsense');
                 Setting::Set('slot', $form->slot, 'adsense');
-                Setting::Set('sort', $form->sort, 'adsense');
 
                 Yii::$app->session->setFlash('data-saved', Yii::t('AdsenseModule.base', 'Saved'));
                 // $this->redirect(Url::toRoute('index'));
@@ -37,7 +36,6 @@ class AdminController extends Controller
         } else {
             $form->client = Setting::Get('client', 'adsense');
             $form->slot = Setting::Get('slot', 'adsense');
-            $form->sort = Setting::Get('sort', 'adsense');
         }
 
         return $this->render('index', [
