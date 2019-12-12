@@ -12,7 +12,7 @@ use humhub\models\Setting;
   <?php
   	if (!Setting::Get('client', 'adsense')) {
  ?>
- 	Please set your ad client and ad slot ids in administration
+ 	<p>Please set your ad client and ad slot ids in administration</p>
  <?php
 	} else {
 ?>
