@@ -6,8 +6,8 @@ use Yii;
 use yii\helpers\Url;
 use humhub\models\Setting;
 use humhub\components\behaviors\AccessControl;
-use humhub\modules\adsense\forms\SettingsForm;
 use humhub\modules\admin\components\Controller;
+use humhub\modules\adsense\models\forms\SettingsForm;
 
 class AdminController extends Controller
 {
