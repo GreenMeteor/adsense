@@ -14,8 +14,8 @@ class SettingsForm extends \yii\base\Model
     public function rules()
     {
         return [
-            [['client','slot', 'sort'], 'safe'],
-            [['client', 'slot','sort'], 'required'],
+            [['client','slot'], 'safe'],
+            [['client', 'slot'], 'required'],
             [['client'], 'string', 'max' => 255],
             [['slot'], 'string', 'max' => 255],
         ];
