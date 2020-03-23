@@ -2,6 +2,9 @@
 
 use yii\helpers\Url;
 use humhub\models\Setting;
+use humhub\modules\adsense\Assets;
+
+Assets::register($this);
 ?>
 
 <div class="panel">
