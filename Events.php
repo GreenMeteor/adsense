@@ -5,6 +5,7 @@ namespace humhub\modules\adsense;
 use Yii;
 use yii\helpers\Url;
 use yii\base\BaseObject;
+use use humhub\models\Setting;
 use humhub\modules\adsense\widgets\AdFrame;
 
 class Events extends BaseObject
@@ -27,6 +28,9 @@ class Events extends BaseObject
         if (Yii::$app->user->isGuest) {
             return;
         }
-        $event->sender->addWidget(AdFrame::class);
+        $event->sender->view->registerAssetBundle(Assets::class);
+        $event->sender->addWidget(AdFrame::class, [], [
+            'sortOrder' => Setting::Get('timeout', 'adsense')
+            ]);
     }
 }
