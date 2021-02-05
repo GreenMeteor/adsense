@@ -14,8 +14,8 @@ use humhub\modules\ui\form\widgets\SortOrderField;
 
         <?php $form = ActiveForm::begin(['id' => 'adsense-settings-form']); ?>
         <div class="form-group">
-            <?= $form->field($model, 'client'); ?>
-            <?= $form->field($model, 'slot'); ?>
+            <?= $form->field($model, 'client')->hint('ca-pub-xxxxxxxxxx')->label('Client'); ?>
+            <?= $form->field($model, 'slot')->hint('xxxxxxxxxx')->label('Slot'); ?>
             <?= $form->field($model, 'sort')->widget(SortOrderField::class) ?>
         </div>
 
