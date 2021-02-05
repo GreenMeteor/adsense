@@ -5,32 +5,37 @@ namespace humhub\modules\adsense;
 use Yii;
 use yii\helpers\Url;
 use yii\base\BaseObject;
-use humhub\models\Setting;
-use humhub\modules\adsense\widgets\AdFrame;
+use humhub\components\Widget;
+use humhub\modules\ui\menu\MenuLink;
+use humhub\modules\ui\icon\widgets\Icon;
+use humhub\modules\admin\widgets\AdminMenu;
+use humhub\modules\admin\permissions\ManageModules;
 
 class Events extends BaseObject
 {
 
     public static function onAdminMenuInit($event)
     {
-        $event->sender->addItem([
+        if (!Yii::$app->user->can(ManageModules::class)) {
+            return;
+        }
+
+        /** @var AdminMenu $menu */
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
             'label' => Yii::t('AdsenseModule.base', 'AdSense Settings'),
             'url' => Url::toRoute('/adsense/admin/index'),
-            'group' => 'settings',
-            'icon' => '<i class="fa fa-weixin"></i>',
+            'icon' => Icon::get('google'),
             'isActive' => Yii::$app->controller->module && Yii::$app->controller->module->id == 'adsense' && Yii::$app->controller->id == 'admin',
-            'sortOrder' => 650
-        ]);
+            'sortOrder' => 650,
+            'isVisible' => true,
+        ]));
     }
 
     public static function addAdFrame($event)
     {
-        if (Yii::$app->user->isGuest) {
-            return;
-        }
-        $event->sender->view->registerAssetBundle(Assets::class);
-        $event->sender->addWidget(AdFrame::class, [], [
-            'sortOrder' => Setting::Get('timeout', 'adsense')
-            ]);
+        $event->sender->addWidget(widgets\AdFrame::class, [], ['sortOrder' => Yii::$app->getModule('adsense')->settings->get('sort')]);
+
     }
 }
