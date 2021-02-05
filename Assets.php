@@ -4,17 +4,13 @@ namespace humhub\modules\adsense;
 
 use Yii;
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
 class Assets extends AssetBundle
 {
+    public $sourcePath = '@adsense/assets';
 
-    public $publishOptions = [
-        'forceCopy' => true
+    public $depends = [
+        JqueryAsset::class
     ];
-
-    public function init()
-    {
-        $this->sourcePath = dirname(__FILE__) . '/assets';
-        parent::init();
-    }
 }
