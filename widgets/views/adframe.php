@@ -2,7 +2,6 @@
 
 use yii\helpers\Url;
 use humhub\libs\Html;
-use humhub\models\Setting;
 use humhub\widgets\PanelMenu;
 use humhub\modules\ui\view\components\View;
 
