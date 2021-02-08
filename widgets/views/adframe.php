@@ -10,8 +10,8 @@ use humhub\modules\ui\view\components\View;
 /* @var $this View */
 
 $module = Yii::$app->getModule('adsense');
-
-$this->registerJsFile('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', ['data-ad-client' => Yii::$app->getModule('adsense')->getClient(), 'async' => 'async', 'src' => 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'position' => View::POS_HEAD]);
+$urlJs = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+$this->registerJsFile($urlJs, ['data-ad-client' => Yii::$app->getModule('adsense')->getClient(), 'async' => 'async', 'src' => 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'position' => View::POS_HEAD]);
 ?>
 <div class="panel panel-adsense panel-default" id="panel-adsense">
 
@@ -25,24 +25,12 @@ $this->registerJsFile('https://pagead2.googlesyndication.com/pagead/js/adsbygoog
         <?php if (!empty($module->getClient() === '')): ?>
         <p><?= $module->getMessage() ?></p>
         <?php else: ?>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle"
             style="display:block;"
-            data-ad-client="$client"
-            data-ad-slot="$slot"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script <?= Html::nonce() ?>>
-        $(document).ready(function(){
-            var $analyticsOn = $('.adsbygoogle:visible');
-
-            $analyticsOn.each(function() {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-
-            });
-
-        });
-        </script>
+            data-ad-client="<?= $client; ?>"
+            data-ad-slot="<?= $slot; ?>"
+            data-ad-format="auto"></ins>
+        <script <?= Html::nonce() ?>>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <?php endif ?>
         <?= Html::endTag('div') ?>
     </div>
