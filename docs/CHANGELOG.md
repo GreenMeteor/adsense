@@ -1,5 +1,8 @@
 # Changelogs
 Date: *2/8/2021*
+- Fix: missing `$client` & `$slot` issues
+
+Date: *2/8/2021*
 - Enh: New module get methods
 - Enh: Add admin panel config
 - Fix: Remove unused Widget use statement
