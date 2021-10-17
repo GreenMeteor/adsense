@@ -1,4 +1,8 @@
 # Changelogs
+
+Date: *10/17/2021*
+- Enh: Check if guest access is enabled
+
 Date: *2/8/2021*
 - Fix: missing `$client` & `$slot` issues
 
