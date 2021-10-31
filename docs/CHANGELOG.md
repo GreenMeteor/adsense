@@ -1,7 +1,8 @@
 # Changelogs
 
-Date: *10/17/2021*
+Date: *TBA*
 - Enh: Check if guest access is enabled
+- Fix: Remove deprecated Directory widget
 
 Date: *2/8/2021*
 - Fix: missing `$client` & `$slot` issues
