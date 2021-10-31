@@ -11,4 +11,10 @@
 ##### My AdSense account was approved but Ads still don't show up why?
 > Please refer to the [Google AdSense Helpdesk](https://support.google.com/adsense/?hl=en#topic=3373519), as we can not help for common issues that may occur while using Google AdSense
 
-##### 
+##### How do I ask for cookie consent to display ads?
+> We provide no way of doing so, cookie consent is asked on first visit to any HumHub installation provided that you have HTTPS enabled for your site, therefore it is the responsibility of the site owner to ensure that their users know that cookies are being used within their Terms and Privacy Policy.
+>
+> See the following links for **GDPR** and **EEA** related information
+> https://support.google.com/adsense/answer/7670013?hl=en
+> 
+> https://support.google.com/adsense/answer/7666366?hl=en
