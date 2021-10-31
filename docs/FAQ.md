@@ -15,6 +15,7 @@
 > We provide no way of doing so, cookie consent is asked on first visit to any HumHub installation provided that you have HTTPS enabled for your site, therefore it is the responsibility of the site owner to ensure that their users know that cookies are being used within their Terms and Privacy Policy.
 >
 > See the following links for **GDPR** and **EEA** related information
+> 
 > https://support.google.com/adsense/answer/7670013?hl=en
 > 
 > https://support.google.com/adsense/answer/7666366?hl=en
