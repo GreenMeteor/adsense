@@ -1,6 +1,6 @@
 # Changelogs
 
-Date: *TBA*
+Date: *11/21/2020*
 - Enh: Check if guest access is enabled
 - Fix: Remove deprecated Directory widget
 
