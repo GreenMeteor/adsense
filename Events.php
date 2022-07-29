@@ -34,11 +34,14 @@ class Events extends BaseObject
     }
 
     public static function addAdFrame($event)
-    {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity && AuthHelper::isGuestAccessEnabled())
+    {	 
+        if (
+			Yii::$app->user->isGuest && 
+			AuthHelper::isGuestAccessEnabled() &&
+			(!Yii::$app->getModule('legal') || (isset($_COOKIE['cookieconsent_status']) && 'dismiss' === $_COOKIE['cookieconsent_status'] ) )
+		   )
         {
             $event->sender->addWidget(widgets\AdFrame::class, [], ['sortOrder' => Yii::$app->getModule('adsense')->settings->get('sort')]);
-
         }
     }
 }
