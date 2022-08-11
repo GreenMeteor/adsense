@@ -11,7 +11,7 @@ use humhub\modules\ui\view\components\View;
 
 $module = Yii::$app->getModule('adsense');
 $urlJs = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-$this->registerJsFile($urlJs, ['data-ad-client' => Yii::$app->getModule('adsense')->getClient(), 'async' => 'async', 'src' => 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'position' => View::POS_HEAD]);
+$this->registerJsFile($urlJs, ['data-ad-client' => Yii::$app->getModule('adsense')->getClient(), 'src' => 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' . Yii::$app->getModule('adsense')->getClient() . 'crossorigin="anonymous"', 'position' => View::POS_END]);
 ?>
 <div class="panel panel-adsense panel-default" id="panel-adsense">
 
@@ -22,7 +22,7 @@ $this->registerJsFile($urlJs, ['data-ad-client' => Yii::$app->getModule('adsense
 
     <div class="panel-body">
         <?= Html::beginTag('div') ?>
-        <?php if (!empty($module->getClient() === '')): ?>
+        <?php if (empty($client && $slot)): ?>
         <p><?= $module->getMessage() ?></p>
         <?php else: ?>
         <ins class="adsbygoogle"
