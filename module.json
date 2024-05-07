@@ -1,10 +1,10 @@
 {
     "id": "adsense",
-    "version": "1.0.6",
+    "version": "1.2.0-beta.1",
     "name": "AdSense",
     "description": "Adds Google AdSense Functionality.",
     "humhub": {
-        "minVersion": "1.9.0"
+        "minVersion": "1.16.0-beta.1"
     },
     "keywords": ["ads", "adsense"],
     "homepage": "https://github.com/GreenMeteor",
@@ -15,10 +15,5 @@
             "homepage": "https://github.com/GreenMeteor",
             "role": "Developer"
         },
-        {
-            "name": "humhub-contrib",
-            "homepage": "https://github.com/humhub-contrib",
-            "role": "Maintainer"
-        }
     ]	
 }
