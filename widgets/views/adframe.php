@@ -49,7 +49,7 @@ $this->registerMetaTag([
         <?php if (empty($client && $slot)): ?>
         <p><?= $module->getMessage() ?></p>
         <?php else: ?>
-        <script async src="<?= $urlJs; ?>"></script>
+        <script async src="<?= $urlJs; ?>" <?= Html::nonce() ?>></script>
         <ins class="adsbygoogle"
             style="display:block;"
             data-ad-client="<?= $client; ?>"
