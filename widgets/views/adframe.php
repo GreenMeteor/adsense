@@ -60,10 +60,10 @@ $this->registerMetaTag([
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <div class="modal-title" id="adblockerModalLabel"><b>AdBlocker Detected</b></div>
+                        <div class="modal-title" id="adblockerModalLabel"><?= Yii::t('AdsenseModule.base', '<b>AdBlocker Detected</b>'); ?></div>
                     </div>
                     <div class="modal-body">
-                        <div class="adblocker-warning">Please disable AdBlocker to view content.</div>
+                        <div class="adblocker-warning"><?= Yii::t('AdsenseModule.base', 'Please disable AdBlocker to view content.'); ?></div>
                     </div>
                 </div>
             </div>
