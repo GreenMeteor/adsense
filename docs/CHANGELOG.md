@@ -1,5 +1,8 @@
 # Changelogs
 
+Date: *11/10/2024*
+- Enh: Create ads.txt
+
 Date: *11/21/2020*
 - Enh: Check if guest access is enabled
 - Fix: Remove deprecated Directory widget
