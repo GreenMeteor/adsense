@@ -4,14 +4,13 @@ namespace humhub\modules\adsense;
 
 use Yii;
 use yii\helpers\Url;
-use yii\base\BaseObject;
 use humhub\modules\ui\menu\MenuLink;
 use humhub\modules\ui\icon\widgets\Icon;
 use humhub\modules\admin\widgets\AdminMenu;
 use humhub\modules\user\helpers\AuthHelper;
 use humhub\modules\admin\permissions\ManageModules;
 
-class Events extends BaseObject
+class Events
 {
 
     public static function onAdminMenuInit($event)
