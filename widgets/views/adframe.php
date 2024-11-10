@@ -24,6 +24,9 @@ $this->registerMetaTag([
     'name' => 'google-adsense-account',
     'content' => Yii::$app->getModule('adsense')->getClient(),
 ]);
+
+\humhub\modules\adsense\assets\Assets::register($this);
+
 ?>
 <style>
 .ins.adsbygoogle[data-ad-status="unfilled"] {
@@ -69,38 +72,6 @@ $this->registerMetaTag([
             </div>
         </div>
         <?php endif ?>
-        <script <?= Html::nonce() ?>>
-            // Variable to track if AdSense script has been loaded
-            var adsenseScriptLoaded = false;
-            // Variable to track if adblocker check has been done
-            var adblockerCheckDone = false;
-
-            // Function to check if AdSense script is loaded and AdBlocker is enabled
-            function checkAdBlocker() {
-                if (!adblockerCheckDone && !adsenseScriptLoaded) {
-                    console.log('AdBlocker enabled');
-                    $('#adblockerModal').modal('show'); // Show modal if AdSense script is not loaded
-                    adblockerCheckDone = true;
-                } else if (!adblockerCheckDone && adsenseScriptLoaded) {
-                    console.log('AdBlocker not enabled');
-                    $('#adblockerModal').modal('hide'); // Hide modal if AdSense script is loaded
-                    adblockerCheckDone = true;
-                    // Push AdSense ads if AdBlocker is not enabled
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                }
-            }
-
-            // Check if AdSense script is loaded
-            window.addEventListener('load', function() {
-                if (typeof adsbygoogle === 'undefined') {
-                    adsenseScriptLoaded = false;
-                } else {
-                    adsenseScriptLoaded = true;
-                }
-                checkAdBlocker(); // Check initially
-            });
-
-        </script>
         <?= Html::endTag('div') ?>
     </div>
 </div>
